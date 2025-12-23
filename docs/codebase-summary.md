@@ -1,33 +1,39 @@
 # Codebase Summary - TRACE Project
 
-Tóm tắt cấu trúc và nội dung mã nguồn hiện tại của dự án.
+Tóm tắt cấu trúc và nội dung mã nguồn của dự án TRACE (Dấu Vết).
 
 ## 1. Thành phần Chính
 | Tệp tin | Kích thước | Chức năng |
 | :--- | :--- | :--- |
-| `index.html` | ~4.5KB | Tệp duy nhất chứa toàn bộ HTML/CSS/JS |
+| `index.html` | 20.16KB | Tệp duy nhất chứa toàn bộ HTML/CSS/JS (Single File Architecture) |
+| `assets/` | ~480KB | Chứa các tài sản hình ảnh UI và tham khảo |
+| `docs/` | - | Tài liệu kỹ thuật và hướng dẫn dự án |
 
-## 2. Chi tiết Triển khai (Phase 1)
+## 2. Chi tiết Triển khai (SFA)
 
 ### HTML Structure
-- Sử dụng thẻ `<main>` với class `.page-container` để bọc toàn bộ nội dung.
-- Đã có khung thử nghiệm hiển thị tiếng Việt.
+- **Semantic HTML5**: Sử dụng `<header>`, `<main>`, `<section>`, `<article>`, `<footer>`.
+- **SEO Ready**: Đầy đủ Meta Tags (Primary, OG, Twitter) và JSON-LD Event Schema.
+- **Accessibility**: Đạt chuẩn WCAG AAA với độ tương phản màu sắc cao (≥13.5:1).
 
-### CSS (Design Tokens)
-- **Bảng màu**: 6 biến màu cơ bản (background, text primary/heading/secondary, accent green, border).
-- **Typography**: Sử dụng font Serif (Times New Roman fallback), hỗ trợ fluid scaling bằng `clamp()`.
-- **Spacing**: Hệ thống thang đo từ `xs` (8px) đến `3xl` (80px).
+### CSS (Design Tokens & Layout)
+- **Bảng màu (Eco-Aesthetic)**:
+  - `--color-background`: `#EBE5D9` (Beige ấm)
+  - `--color-accent-green`: `#4A7C59` (Xanh lá mềm)
+  - `--color-text-primary`: `#1A1A1A`
+- **Typography**: Sử dụng font Serif hệ thống (`Times New Roman`, `Georgia`), hỗ trợ fluid scaling bằng `clamp()`.
+- **Responsive**: Mobile-first với breakpoints tại `768px` và `1024px`.
 - **Layout**: Max-width `800px`, padding linh hoạt theo thiết bị.
 
-### Responsive Strategy
-- Sử dụng Mobile-first approach.
-- Breakpoints tại `768px` (Tablet) và `1024px` (Desktop).
+### JavaScript (Interactions)
+- **Vanilla JS**: Khoảng 38 dòng mã để xử lý hiệu ứng.
+- **Intersection Observer**: Xử lý hiệu ứng fade-in khi cuộn trang.
+- **Motion Preference**: Hỗ trợ `prefers-reduced-motion` để tắt hiệu ứng cho người dùng nhạy cảm.
 
-## 3. Trạng thái Hiện tại
-- [x] Thiết lập cấu trúc nền tảng.
-- [x] Định nghĩa Design Tokens.
-- [x] Xử lý hiển thị tiếng Việt.
-- [ ] Chưa có JavaScript logic (dự kiến Phase 4).
+## 3. Hiệu suất & Tối ưu hóa
+- **Kích thước file**: 20.16KB (Chỉ chiếm 40% giới hạn 50KB đề ra).
+- **Dependencies**: 0 (Không sử dụng thư viện bên ngoài).
+- **Requests**: Chỉ 1 request chính cho HTML (ngoại trừ các assets hình ảnh).
 
 ---
 *Cập nhật lần cuối: 2025-12-23*
